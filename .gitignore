@@ -1,6 +1,4 @@
-node_modules/
-dist/
-.env
-.env.local
 
 
+
+Remove-Item -Recurse -Force backend/.git
