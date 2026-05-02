@@ -10,16 +10,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 border border-neutral-800 rounded-full mb-6">
-                <Sparkles className="text-neutral-400" size={16} />
-                <span className="text-neutral-400 text-sm">Available for new projects</span>
-              </div>
-            </motion.div>
+            
 
             <motion.h1
               className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6"
@@ -27,16 +18,17 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Your Name</span>
+              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+                Kostub Kumar</span>
             </motion.h1>
 
             <motion.p
-              className="text-xl sm:text-2xl text-neutral-400 mb-8"
+              className="text-xl sm:text-2xl font-bold text-neutral-400 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              A passionate developer crafting beautiful and functional web experiences.
+              Northeastern 2029
             </motion.p>
 
             <motion.p
@@ -45,9 +37,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Welcome to my portfolio! I specialize in building modern web applications
-              with cutting-edge technologies. Explore my work, skills, and experiences
-              to learn more about what I do.
+              Hey, I'm Kostub. I'm a second-year Data Science and Finance major at 
+              Northeastern University. I enjoy basketball, tennis, boxing, playing
+              the guitar, and hitting the gym.
             </motion.p>
 
             <motion.div
@@ -78,7 +70,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <a
-                href="https://github.com"
+                href="https://github.com/Kostub17"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-emerald-400 hover:border-emerald-400 transition-all"
@@ -87,7 +79,7 @@ export default function Home() {
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/kostub-kumar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-cyan-400 hover:border-cyan-400 transition-all"
@@ -96,7 +88,7 @@ export default function Home() {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:hello@example.com"
+                href="mailto:kostubk@gmail.com"
                 className="p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-emerald-400 hover:border-emerald-400 transition-all"
                 aria-label="Email"
               >
@@ -118,11 +110,13 @@ export default function Home() {
                 <div className="aspect-square w-full max-w-md bg-neutral-800 rounded-xl flex items-center justify-center relative overflow-hidden">
                   {/* Placeholder Content */}
                   <div className="relative z-10 text-center p-8">
-                    <div className="w-32 h-32 bg-neutral-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-6xl font-bold text-neutral-400">YN</span>
+                    <div className="relative bg-neutral-900 border border-neutral-800 rounded-2xl p-2 overflow-hidden">
+                      <img
+                        src="headshot.jpeg"
+                        alt="Kostub Kumar"
+                        className="aspect-square w-full max-w-md rounded-xl object-cover"
+                      />
                     </div>
-                    <p className="text-neutral-400 text-sm">Replace with your photo</p>
-                    <p className="text-neutral-500 text-xs mt-1">Recommended: 500x500px</p>
                   </div>
                 </div>
               </div>

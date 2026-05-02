@@ -58,8 +58,8 @@ export default function Root() {
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-white tracking-tight">Portfolio</span>
-                <span className="text-xs text-emerald-400 -mt-1">Your Name</span>
+                <span className="text-lg font-bold text-white tracking-tight">Kostub Kumar</span>
+                <span className="text-xs text-emerald-400 -mt-1">Home</span>
               </div>
             </Link>
 
