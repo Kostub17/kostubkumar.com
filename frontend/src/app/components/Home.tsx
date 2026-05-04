@@ -170,6 +170,7 @@ export default function Home() {
           >
             Contact Me
           </motion.h2>
+          <p className="text-neutral-400 mb-4">Feel free to reach out and connect with me!</p>
 
           <motion.div
             className="grid sm:grid-cols-3 gap-6"
@@ -177,6 +178,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >
+            
             {/* Email */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-emerald-400 transition-all group cursor-pointer">
               <a
@@ -230,7 +232,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
           >
-            <p className="text-neutral-400 mb-4">Follow me on social media:</p>
+            
             <div className="flex gap-4 flex-wrap">
               <a
                 href="https://github.com/Kostub17"
