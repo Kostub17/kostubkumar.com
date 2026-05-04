@@ -24,7 +24,6 @@ export default function Root() {
     { path: '/projects', label: 'Projects' },
     { path: '/skills', label: 'Skills' },
     { path: '/interests', label: 'Interests' },
-    { path: '/contact', label: 'Contact' },
   ];
 
   const isActive = (path: string) => {

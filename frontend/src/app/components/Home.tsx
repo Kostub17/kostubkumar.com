@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { ArrowRight, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Sparkles, Phone, MapPin, Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Home() {
@@ -159,7 +159,115 @@ export default function Home() {
             </p>
           </motion.div>
         </div>
+
+        {/* Contact Me Section */}
+        <div>
+          <motion.h2
+            className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-6 mt-20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            Contact Me
+          </motion.h2>
+
+          <motion.div
+            className="grid sm:grid-cols-3 gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+          >
+            {/* Email */}
+            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-emerald-400 transition-all group cursor-pointer">
+              <a
+                href="mailto:kostubk@gmail.com"
+                className="flex items-start gap-4"
+              >
+                <div className="p-3 bg-emerald-900/30 rounded-lg group-hover:bg-emerald-900/50 transition-all">
+                  <Mail className="text-emerald-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Email</h3>
+                  <p className="text-neutral-400 text-sm">kostubk@gmail.com</p>
+                </div>
+              </a>
+            </div>
+
+            {/* Phone */}
+            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-cyan-400 transition-all group cursor-pointer">
+              <a
+                href="tel:+1234567890"
+                className="flex items-start gap-4"
+              >
+                <div className="p-3 bg-cyan-900/30 rounded-lg group-hover:bg-cyan-900/50 transition-all">
+                  <Phone className="text-cyan-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Phone</h3>
+                  <p className="text-neutral-400 text-sm">+1 (443) 666-1624</p>
+                </div>
+              </a>
+            </div>
+
+            {/* Location */}
+            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-emerald-400 transition-all group cursor-pointer">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-emerald-900/30 rounded-lg group-hover:bg-emerald-900/50 transition-all">
+                  <MapPin className="text-emerald-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">Location</h3>
+                  <p className="text-neutral-400 text-sm">Boston, MA + Garnet Valley, PA</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Social Media Links */}
+          <motion.div
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
+          >
+            <p className="text-neutral-400 mb-4">Follow me on social media:</p>
+            <div className="flex gap-4 flex-wrap">
+              <a
+                href="https://github.com/Kostub17"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-white hover:border-neutral-600 transition-all hover:bg-neutral-800 inline-flex items-center gap-2"
+                aria-label="GitHub"
+              >
+                <Github size={24} />
+                <span className="text-sm font-medium">GitHub</span>
+              </a>
+              <a
+                href="https://linkedin.com/in/kostub-kumar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-white hover:border-neutral-600 transition-all hover:bg-neutral-800 inline-flex items-center gap-2"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={24} />
+                <span className="text-sm font-medium">LinkedIn</span>
+              </a>
+              <a
+                href="https://instagram.com/kostub_kumar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-white hover:border-neutral-600 transition-all hover:bg-neutral-800 inline-flex items-center gap-2"
+                aria-label="Instagram"
+              >
+                <Instagram size={24} />
+                <span className="text-sm font-medium">Instagram</span>
+              </a>
+              
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
 }
+
