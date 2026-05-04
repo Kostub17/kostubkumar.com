@@ -4,48 +4,116 @@ import { motion } from 'motion/react';
 export default function Education() {
   const education = [
     {
-      degree: 'Master of Science in Computer Science',
-      institution: 'University of Technology',
-      period: '2018 - 2020',
-      gpa: '3.9/4.0',
-      description: 'Specialized in Software Engineering and Artificial Intelligence',
+      degree: 'Bachelor of Science in Data Science and Finance',
+      institution: 'Northeastern University',
+      period: '2025 - 2029',
+      gpa: '3.85/4.0',
+      description: 'Dean\'s List, Finnovate Third Place Winner',
       coursework: [
-        'Advanced Algorithms',
-        'Machine Learning',
-        'Software Architecture',
-        'Distributed Systems',
+        'Advanced Programming with Data',
+        'Discrete Structures',
+        'Financial Management',
+        'Business Statistics',
       ],
     },
     {
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'State University',
-      period: '2014 - 2018',
-      gpa: '3.7/4.0',
-      description: 'Dean\'s List, Cum Laude honors',
+      degree: 'High School Education',
+      institution: 'Garnet Valley High School',
+      period: '2021 - 2025',
+      gpa: '3.81/4.0',
+      description: 'National Honors Society, Varisty Tennis, Programming Club President',
       coursework: [
-        'Data Structures',
-        'Web Development',
-        'Database Systems',
-        'Operating Systems',
+        'AP Computer Science A',
+        'AP Computer Science Principles',
+        'AP Calculus BC',
+        'Business Finance',
       ],
     },
   ];
 
+  const other_education = [
+    {
+      institution: 'Goldman Sachs',
+      program: 'Goldman Sachs Possibilities Series',
+      period: 'Summer 2026',
+      description: 'Networking and skill-building program for aspiring finance professionals',
+      skills: [
+        'Networking with industry leaders',
+        'Finance Career Insights',
+      ],
+    },
+    {
+      institution: 'Trinity College',
+      program: 'Trinity College, London',
+      period: 'Nov 2019 - May 2025',
+      description: 'Passed grades 1-6 in acoustic guitar with distinction.',
+      skills: [
+        'Acoustic Guitar',
+        'Music Theory',
+      ],
+    },
+    {
+      institution: 'Harvard University',
+      program: 'Harvard Secondary School Program',
+      period: 'Summer 2024',
+      description: 'Course: Robotics, Autonomous Vehicles, Drones, and Artificial Intelligence',
+      skills: [
+        'Robotics Fundamentals',
+        'Image Recognition with AI',
+        'Technical Problem Solving',
+      ],
+    },
+    {
+      institution: 'Codeyoung',
+      program: 'Codeyoung Learning Platform',
+      period: 'Sept 2023 - Oct 2024',
+      description: 'Learning Advanced Programming Concepts and Data Structures in Python and Machine Learning',
+      skills: [
+        'Python',
+        'Machine Learning',
+        'SKLearn',
+        'Projects',
+      ],
+    },
+    {
+      institution: 'Drexel University',
+      program: 'Drexel University Business Camp',
+      period: 'Summer 2024',
+      description: 'Summer Program at Drexel University focused on Business and Entrepreneurship with < 20% acceptance rate, placed runner up in their pitch competition',
+      skills: [
+        'Business Strategy',
+        'Case Studies',
+        'Public Speaking',
+        'Career Development',
+      ],
+    }
+  ];
+
   const certifications = [
     {
-      name: 'AWS Certified Solutions Architect',
-      issuer: 'Amazon Web Services',
-      year: '2023',
+      name: 'Akuna Options 101',
+      issuer: 'Akuna Capital',
+      year: 'Jan 2026',
     },
     {
-      name: 'Professional Scrum Master I',
-      issuer: 'Scrum.org',
-      year: '2022',
+      name: 'Generative AI Leader',
+      issuer: 'Coursera',
+      year: 'Feb 2026',
     },
     {
-      name: 'React Developer Certification',
-      issuer: 'Meta',
-      year: '2021',
+      name: 'Citi Markets Quantitative Analyst (MQA) Job Stimulation',
+      issuer: 'Forage',
+      year: 'Feb 2026',
+    },
+    {
+      name: 'Introduction to Large Language Models',
+      issuer: 'Google',
+      year: 'Dec 2025',
+    },
+    {
+      name: 'Acoustic Guitar Grade 6 with Distinction',
+      issuer: 'Trinity College',
+      year: 'Jan 2022',
     },
   ];
 
@@ -66,10 +134,10 @@ export default function Education() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          My academic background and professional certifications
         </motion.p>
 
-        {/* Achievement Stats */}
+        {/*
+        {/* Achievement Stats * /}
         <motion.div
           className="grid grid-cols-3 gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -92,6 +160,8 @@ export default function Education() {
             <div className="text-neutral-400 text-xs">Average</div>
           </div>
         </motion.div>
+        */}
+
 
         <div className="mb-12">
           <motion.h2
@@ -127,11 +197,11 @@ export default function Education() {
                         <div>
                           <h3 className="text-2xl font-semibold text-white mb-2 flex items-center gap-2">
                             <Medal className="text-emerald-400" size={20} />
-                            {edu.degree}
+                            {edu.institution}
                           </h3>
                           <div className="flex flex-wrap gap-4 text-sm">
                             <span className="font-medium text-emerald-400">
-                              {edu.institution}
+                              {edu.degree}
                             </span>
                             <span className="text-neutral-500">•</span>
                             <span className="text-neutral-500">{edu.period}</span>
@@ -171,6 +241,82 @@ export default function Education() {
             </div>
           </div>
         </div>
+
+        <div className="mb-12">
+          <motion.h2
+            className="text-2xl font-semibold text-white mb-6 flex items-center gap-3"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <div className="p-3 bg-gradient-to-br from-emerald-950 to-emerald-900 rounded-xl border border-emerald-800">
+              <GraduationCap className="text-emerald-400" size={24} />
+            </div>
+            Other Educational Experiences
+          </motion.h2>
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-0 md:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-600 via-cyan-600 to-emerald-600"></div>
+
+            <div className="space-y-8">
+              {other_education.map((edu, index) => (
+                <motion.div
+                  key={index}
+                  className="relative pl-6 md:pl-16"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute left-0 md:left-4 top-0 w-5 h-5 rounded-full bg-gradient-to-br from-emerald-600 to-cyan-600 border-4 border-black"></div>
+
+                  <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-neutral-700 transition-all">
+                    <div>
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <h3 className="text-2xl font-semibold text-white mb-2 flex items-center gap-2">
+                            <Medal className="text-emerald-400" size={20} />
+                            {edu.institution}
+                          </h3>
+                          <div className="flex flex-wrap gap-4 text-sm">
+                            <span className="font-medium text-emerald-400">
+                              {edu.program}
+                            </span>
+                            <span className="text-neutral-500">•</span>
+                            <span className="text-neutral-500">{edu.period}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p className="text-neutral-400 mb-4 bg-neutral-900/50 p-4 rounded-lg border border-neutral-800">
+                        {edu.description}
+                      </p>
+
+                      <div>
+                        <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                          <BookOpen size={18} className="text-cyan-400" />
+                          Relevant Coursework:
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {edu.skills.map((course, i) => (
+                            <motion.span
+                              key={i}
+                              className="px-3 py-1 bg-neutral-900 border border-neutral-800 text-neutral-300 rounded-full text-sm hover:border-emerald-500 transition-colors"
+                              whileHover={{ scale: 1.05 }}
+                            >
+                              {course}
+                            </motion.span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+
 
         <div>
           <motion.h2
