@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 export default function Home() {
 
   return (
-    <div className="min-h-[calc(100vh-8rem)] flex items-center bg-black relative overflow-hidden">
+    <div className="min-h-[calc(100vh-8rem)] flex flex-col items-center bg-black relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -121,6 +121,42 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 w-full">
+        <div>
+          <motion.h2
+            className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            About Me
+          </motion.h2>
+
+          <motion.div
+            className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <p className="text-neutral-400 leading-relaxed mb-4">
+              I'm a Second-Year Data Science and Business student at Northeastern University with a passion for working on 
+              things that sit at the intersection of finance and data. I am interested in working on projects that are in the
+              fintech space. I have experience working on many projects in the past such as a Pairs Trading Algorithm, 
+              a Semantic Legal Differenciator, a Heart Disease Detector, etc. Through these projects, I've built a strong 
+              foundation in tools such as React, Python, NestJS, machine learning, etc. 
+            </p>
+            <p className="text-neutral-400 leading-relaxed">
+              Outside of tech, I'm someone who's always staying active. You'll find me on the tennis court, playing 
+              basketball, or in the gym. I picked up guitar a while back and still play whenever I get the chance. I'm 
+              also deeply connected to my South Asian roots through UTSAV, Northeastern's South Asian cultural club, 
+              which has been one of the most meaningful parts of my college experience. Whether it's through code, music, 
+              or community, I'm always looking for ways to create something worth being proud of.
+              
+            </p>
           </motion.div>
         </div>
       </div>

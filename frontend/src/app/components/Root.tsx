@@ -18,7 +18,7 @@ export default function Root() {
 
   const navLinks = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
+    { path: '/resume', label: 'Resume' },
     { path: '/experience', label: 'Experience' },
     { path: '/education', label: 'Education' },
     { path: '/projects', label: 'Projects' },
