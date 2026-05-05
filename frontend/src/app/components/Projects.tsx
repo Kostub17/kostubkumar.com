@@ -52,7 +52,7 @@ export default function Projects() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-black">
       <div className="max-w-6xl mx-auto">
         <motion.h1
-          className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-2"
+          className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 mb-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -113,18 +113,18 @@ export default function Projects() {
                     <span className="text-white text-xs">{project.stats.stars}</span>
                   </div>
                   <div className="flex items-center gap-1 px-3 py-1 bg-black/70 backdrop-blur-sm rounded-full border border-neutral-700">
-                    <GitFork className="text-emerald-400" size={14} />
+                    <GitFork className="text-gray-500" size={14} />
                     <span className="text-white text-xs">{project.stats.forks}</span>
                   </div>
                   <div className="flex items-center gap-1 px-3 py-1 bg-black/70 backdrop-blur-sm rounded-full border border-neutral-700">
-                    <Eye className="text-cyan-400" size={14} />
+                    <Eye className="text-gray-400" size={14} />
                     <span className="text-white text-xs">{project.stats.watchers}</span>
                   </div>
                 </div>
               </div>
 
               <div className="p-6 relative z-10">
-                <h2 className="text-2xl font-semibold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+                <h2 className="text-2xl font-semibold text-white mb-3 group-hover:text-gray-300 transition-colors">
                   {project.title}
                 </h2>
                 <p className="text-neutral-400 mb-4 leading-relaxed">
@@ -133,7 +133,7 @@ export default function Projects() {
 
                 <div className="mb-4">
                   <h3 className="font-semibold text-white mb-2 text-sm flex items-center gap-2">
-                    <div className="w-1 h-3 bg-gradient-to-b from-emerald-400 to-cyan-400 rounded-full"></div>
+                    <div className="w-1 h-3 bg-gradient-to-b from-white to-gray-300 rounded-full"></div>
                     Key Features:
                   </h3>
                   <ul className="space-y-1">
@@ -145,7 +145,7 @@ export default function Projects() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 + i * 0.05 }}
                       >
-                        <span className="text-emerald-400 mr-2">▸</span>
+                        <span className="text-white mr-2">▸</span>
                         <span>{highlight}</span>
                       </motion.li>
                     ))}
@@ -170,7 +170,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-emerald-400 hover:border-emerald-500 transition-all"
+                    className="flex items-center gap-2 px-4 py-2 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-white hover:border-gray-600 transition-all"
                   >
                     <Github size={18} />
                     <span className="text-sm">Code</span>
@@ -179,7 +179,7 @@ export default function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-emerald-700 rounded-lg text-white hover:bg-emerald-600 transition-all"
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-lg text-white hover:bg-gray-600 transition-all"
                   >
                     <ExternalLink size={18} />
                     <span className="text-sm">Live Demo</span>

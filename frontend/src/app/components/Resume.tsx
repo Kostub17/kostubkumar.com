@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-black min-h-screen">
       <motion.h1
-        className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-6"
+        className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 mb-6"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -37,7 +37,7 @@ export default function About() {
       <div className="mt-6 text-sm text-neutral-400">
         <p>
           If the resume does not appear, download it here:{' '}
-          <a href="\resume.pdf" className="text-emerald-400 underline">
+          <a href="\resume.pdf" className="text-white underline">
             Download Resume
           </a>
         </p>

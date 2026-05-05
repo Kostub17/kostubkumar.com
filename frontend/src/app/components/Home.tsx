@@ -18,7 +18,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300">
                 Kostub Kumar</span>
             </motion.h1>
 
@@ -50,7 +50,7 @@ export default function Home() {
             >
               <Link
                 to="/projects"
-                className="group inline-flex items-center px-6 py-3 bg-emerald-700 text-white rounded-lg hover:bg-emerald-600 transition-all"
+                className="group inline-flex items-center px-6 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-all"
               >
                 View My Work
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
@@ -73,7 +73,7 @@ export default function Home() {
                 href="https://github.com/Kostub17"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-emerald-400 hover:border-emerald-400 transition-all"
+                className="p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-white hover:border-gray-600 transition-all"
                 aria-label="GitHub"
               >
                 <Github size={24} />
@@ -82,14 +82,14 @@ export default function Home() {
                 href="https://linkedin.com/in/kostub-kumar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-cyan-400 hover:border-cyan-400 transition-all"
+                className="p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-gray-300 hover:border-gray-600 transition-all"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
               </a>
               <a
                 href="mailto:kostubk@gmail.com"
-                className="p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-emerald-400 hover:border-emerald-400 transition-all"
+                className="p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-white hover:border-gray-600 transition-all"
                 aria-label="Email"
               >
                 <Mail size={24} />
@@ -128,7 +128,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 w-full">
         <div>
           <motion.h2
-            className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-6"
+            className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -163,7 +163,7 @@ export default function Home() {
         {/* Contact Me Section */}
         <div>
           <motion.h2
-            className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 mb-6 mt-20"
+            className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 mb-6 mt-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -185,8 +185,8 @@ export default function Home() {
                 href="mailto:kostubk@gmail.com"
                 className="flex items-start gap-4"
               >
-                <div className="p-3 bg-emerald-900/30 rounded-lg group-hover:bg-emerald-900/50 transition-all">
-                  <Mail className="text-emerald-400" size={24} />
+                <div className="p-3 bg-gray-900/30 rounded-lg group-hover:bg-gray-900/50 transition-all">
+                  <Mail className="text-white" size={24} />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-1">Email</h3>
@@ -196,13 +196,13 @@ export default function Home() {
             </div>
 
             {/* Phone */}
-            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-cyan-400 transition-all group cursor-pointer">
+            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-gray-500 transition-all group cursor-pointer">
               <a
                 href="tel:+1234567890"
                 className="flex items-start gap-4"
               >
-                <div className="p-3 bg-cyan-900/30 rounded-lg group-hover:bg-cyan-900/50 transition-all">
-                  <Phone className="text-cyan-400" size={24} />
+                <div className="p-3 bg-gray-900/30 rounded-lg group-hover:bg-gray-900/50 transition-all">
+                  <Phone className="text-gray-300" size={24} />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-1">Phone</h3>
@@ -214,8 +214,8 @@ export default function Home() {
             {/* Location */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-emerald-400 transition-all group cursor-pointer">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-emerald-900/30 rounded-lg group-hover:bg-emerald-900/50 transition-all">
-                  <MapPin className="text-emerald-400" size={24} />
+                <div className="p-3 bg-gray-900/30 rounded-lg group-hover:bg-gray-900/50 transition-all">
+                  <MapPin className="text-white" size={24} />
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-1">Location</h3>

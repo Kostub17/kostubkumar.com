@@ -15,14 +15,14 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/"
-            className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors"
           >
             <Home className="mr-2" size={20} />
             Go Home
           </Link>
           <button
             onClick={() => window.history.back()}
-            className="inline-flex items-center justify-center px-6 py-3 border-2 border-cyan-600 text-cyan-400 rounded-lg hover:border-cyan-500 hover:text-cyan-300 transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 border-2 border-gray-600 text-gray-300 rounded-lg hover:border-gray-500 hover:text-white transition-colors"
           >
             <ArrowLeft className="mr-2" size={20} />
             Go Back

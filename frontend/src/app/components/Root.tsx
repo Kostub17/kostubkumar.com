@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -40,7 +40,7 @@ export default function Root() {
       <motion.header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-black/80 backdrop-blur-xl border-b border-neutral-800/50 shadow-2xl shadow-emerald-500/10'
+            ? 'bg-black/80 backdrop-blur-xl border-b border-neutral-800/50 shadow-2xl shadow-gray-500/10'
             : 'bg-transparent border-b border-transparent'
         }`}
         initial={{ y: -100 }}
@@ -52,14 +52,10 @@ export default function Root() {
             {/* Logo */}
             <Link to="/" className="group relative flex items-center gap-3">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full blur-md opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-                <div className="relative w-10 h-10 bg-gradient-to-br from-emerald-600 to-cyan-600 rounded-full flex items-center justify-center">
-                  <Sparkles className="text-white" size={20} />
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full blur-md opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-white tracking-tight">Kostub Kumar</span>
-                <span className="text-xs text-emerald-400 -mt-1">Home</span>
+                <span className="text-2xl font-black text-white tracking-wide font-['Dancing_Script']">Kostub Kumar</span>
               </div>
             </Link>
 
@@ -73,7 +69,7 @@ export default function Root() {
                 >
                   {isActive(link.path) && (
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-full"
+                      className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full"
                       layoutId="activeNav"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
@@ -98,7 +94,7 @@ export default function Root() {
             {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-emerald-400 hover:border-emerald-800 transition-all"
+              className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-full bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white hover:border-gray-700 transition-all"
               whileTap={{ scale: 0.9 }}
             >
               <AnimatePresence mode="wait">
@@ -152,7 +148,7 @@ export default function Root() {
                         onClick={() => setMobileMenuOpen(false)}
                         className={`block px-6 py-4 rounded-2xl transition-all ${
                           isActive(link.path)
-                            ? 'bg-gradient-to-r from-emerald-600 to-cyan-600 text-white font-medium shadow-lg shadow-emerald-500/30'
+                            ? 'bg-gradient-to-r from-gray-600 to-gray-700 text-white font-medium shadow-lg shadow-gray-500/30'
                             : 'text-neutral-400 hover:bg-neutral-900 hover:text-white'
                         }`}
                       >
@@ -180,7 +176,6 @@ export default function Root() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <p className="text-center text-neutral-500 flex items-center justify-center gap-2">
             <span>© {new Date().getFullYear()} My Portfolio. All rights reserved.</span>
-            <Sparkles className="text-emerald-400 animate-pulse" size={16} />
           </p>
         </div>
       </footer>
