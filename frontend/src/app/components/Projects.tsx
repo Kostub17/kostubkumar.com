@@ -1,71 +1,52 @@
 import { ExternalLink, Github, Star, GitFork, Eye } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  github: string;
+  demo: string;
+  technologies: string[];
+  highlights: string[];
+  stats: {
+    stars: number;
+    forks: number;
+    watchers: number;
+  };
+}
 
 export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-  const projects = [
-    {
-      title: 'E-Commerce Platform',
-      description:
-        'A full-featured online shopping platform with cart management, payment integration, and admin dashboard.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop',
-      github: 'https://github.com',
-      demo: 'https://example.com',
-      highlights: [
-        'Real-time inventory management',
-        'Secure payment processing',
-        'Responsive design for all devices',
-      ],
-      stats: { stars: 234, forks: 56, watchers: 89 },
-    },
-    {
-      title: 'Task Management App',
-      description:
-        'A collaborative project management tool with real-time updates and team collaboration features.',
-      technologies: ['TypeScript', 'React', 'Firebase', 'Tailwind CSS'],
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop',
-      github: 'https://github.com',
-      demo: 'https://example.com',
-      highlights: [
-        'Real-time collaboration',
-        'Drag-and-drop interface',
-        'Team analytics dashboard',
-      ],
-      stats: { stars: 189, forks: 42, watchers: 67 },
-    },
-    {
-      title: 'Weather Dashboard',
-      description:
-        'An interactive weather application providing detailed forecasts and weather visualization.',
-      technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS'],
-      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop',
-      github: 'https://github.com',
-      demo: 'https://example.com',
-      highlights: [
-        '7-day weather forecast',
-        'Interactive weather charts',
-        'Location-based search',
-      ],
-      stats: { stars: 156, forks: 31, watchers: 48 },
-    },
-    {
-      title: 'Social Media Dashboard',
-      description:
-        'A comprehensive analytics dashboard for managing multiple social media accounts.',
-      technologies: ['Next.js', 'PostgreSQL', 'Prisma', 'TailwindCSS'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-      github: 'https://github.com',
-      demo: 'https://example.com',
-      highlights: [
-        'Multi-platform integration',
-        'Engagement analytics',
-        'Scheduled posting',
-      ],
-      stats: { stars: 312, forks: 78, watchers: 124 },
-    },
-  ];
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
+    if (!apiUrl) {
+      setError('API URL not configured');
+      setLoading(false);
+      return;
+    }
+
+    fetch(`${apiUrl}/projects`)
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then(data => {
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-black">
@@ -88,16 +69,32 @@ export default function Projects() {
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-neutral-700 transition-all"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              onHoverStart={() => setHoveredProject(index)}
-              onHoverEnd={() => setHoveredProject(null)}
-            >
+          {loading ? (
+            <div className="col-span-full text-center py-12">
+              <div className="text-neutral-400">Loading projects...</div>
+            </div>
+          ) : error ? (
+            <div className="col-span-full text-center py-12">
+              <div className="text-red-400 mb-4">Error loading projects: {error}</div>
+              <div className="text-neutral-400 text-sm">
+                Make sure your backend is running and VITE_API_URL is configured in your .env file.
+              </div>
+            </div>
+          ) : projects.length === 0 ? (
+            <div className="col-span-full text-center py-12">
+              <div className="text-neutral-400">No projects found.</div>
+            </div>
+          ) : (
+            projects.map((project, index) => (
+              <motion.div
+                key={index}
+                className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-neutral-700 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                onHoverStart={() => setHoveredProject(index)}
+                onHoverEnd={() => setHoveredProject(null)}
+              >
 
               <div className="relative h-48 bg-neutral-800 overflow-hidden">
                 <motion.img
@@ -190,7 +187,8 @@ export default function Projects() {
                 </div>
               </div>
             </motion.div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </div>

@@ -3,28 +3,48 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: '',
-  });
-  const [focusedField, setFocusedField] = useState<string | null>(null);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for your message! This is a demo form.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
     });
-  };
+    const [focusedField, setFocusedField] = useState<string | null>(null);
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: `Subject: ${formData.subject}\n\n${formData.message}`,
+        }),
+        });
+        const data = await res.json();
+        if (data.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        } else {
+        setStatus('error');
+        }
+    } catch (err) {
+        setStatus('error');
+    }
+    };
+
+    const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+    setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+    });
+    };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-black">
