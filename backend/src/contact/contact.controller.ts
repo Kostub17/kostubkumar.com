@@ -6,7 +6,7 @@ export class ContactController {
   constructor(private readonly contactService: ContactService) {}
 
   @Post()
-  sendMessage(@Body() body: { name: string; email: string; message: string }) {
-    return this.contactService.sendMessage(body);
+  async contact(@Body() body: { name: string; email: string; message: string }) {
+    return this.contactService.sendEmail(body.name, body.email, body.message);
   }
 }
