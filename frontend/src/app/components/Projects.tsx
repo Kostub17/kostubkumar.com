@@ -105,22 +105,6 @@ export default function Projects() {
                   transition={{ duration: 0.3 }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
-
-                {/* GitHub Stats Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 flex gap-3">
-                  <div className="flex items-center gap-1 px-3 py-1 bg-black/70 backdrop-blur-sm rounded-full border border-neutral-700">
-                    <Star className="text-yellow-400" size={14} />
-                    <span className="text-white text-xs">{project.stats.stars}</span>
-                  </div>
-                  <div className="flex items-center gap-1 px-3 py-1 bg-black/70 backdrop-blur-sm rounded-full border border-neutral-700">
-                    <GitFork className="text-gray-500" size={14} />
-                    <span className="text-white text-xs">{project.stats.forks}</span>
-                  </div>
-                  <div className="flex items-center gap-1 px-3 py-1 bg-black/70 backdrop-blur-sm rounded-full border border-neutral-700">
-                    <Eye className="text-gray-400" size={14} />
-                    <span className="text-white text-xs">{project.stats.watchers}</span>
-                  </div>
-                </div>
               </div>
 
               <div className="p-6 relative z-10">
@@ -175,15 +159,17 @@ export default function Projects() {
                     <Github size={18} />
                     <span className="text-sm">Code</span>
                   </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-lg text-white hover:bg-gray-600 transition-all"
-                  >
-                    <ExternalLink size={18} />
-                    <span className="text-sm">Live Demo</span>
-                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-lg text-white hover:bg-gray-600 transition-all"
+                    >
+                      <ExternalLink size={18} />
+                      <span className="text-sm">Live Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
