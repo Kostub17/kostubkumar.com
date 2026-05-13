@@ -24,7 +24,7 @@ export default function Projects() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const apiUrl = import.meta.env.VITE_API_URL;
+    const apiUrl = (import.meta as any).env.VITE_API_URL;
     if (!apiUrl) {
       setError('API URL not configured');
       setLoading(false);

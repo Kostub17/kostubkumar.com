@@ -37,9 +37,9 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Hey, I'm Kostub. I'm a second-year Data Science and Finance major at 
-              Northeastern University. I enjoy basketball, tennis, boxing, playing
-              the guitar, and hitting the gym.
+              I'm a second-year Data Science and Finance major at Northeastern 
+              University. I enjoy basketball, tennis, boxing, playing the 
+              guitar, and hitting the gym.
             </motion.p>
 
             <motion.div

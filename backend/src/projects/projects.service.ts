@@ -22,7 +22,7 @@ export class ProjectsService {
       title: 'Semantic Contract Differentiation Tool',
       description:
         'A tool that automatically identifies substantive legal changes between two contract versions by combining semantic similarity scoring with targeted LLM analysis to flag only the clauses that truly matter.',
-      technologies: ['OpenRouter API', 'Streamlit UI', 'LLM Analysis', 'Cosine Similarity'],
+      technologies: ['OpenRouter API', 'Streamlit UI', 'LLM Analysis', 'Cosine Similarity', 'Natural Language Processing'],
       image: 'https://th.bing.com/th/id/OIP.2NpSynERZSog2R26jd4tigHaLw?w=115&h=180&c=7&r=0&o=5&pid=1.7',
       github: 'https://github.com/RahulR30/SemanticContractDiff',
       demo: 'https://semanticcontractdiff.streamlit.app/',
@@ -41,9 +41,9 @@ export class ProjectsService {
       github: 'https://github.com/Kostub17/Heart-Disease-Predictor',
       demo: null,
       highlights: [
-        '7-day weather forecast',
-        'Interactive weather charts',
-        'Location-based search',
+        'Linear Regression Model',
+        'KNN Classification Model',
+        '91% Accuracy',
       ],
     },
     {
