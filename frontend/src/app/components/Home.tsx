@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { ArrowRight, Github, Linkedin, Mail, Sparkles, Phone, MapPin, Instagram } from 'lucide-react';
 import { motion } from 'motion/react';
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Home() {
 
