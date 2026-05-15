@@ -113,7 +113,7 @@ export default function Home() {
                   <div className="relative z-10 text-center p-8">
                     <div className="relative bg-neutral-900 border border-neutral-800 rounded-2xl p-2 overflow-hidden">
                       <img
-                        src="headshot.jpeg"
+                        src="headshot2.jpeg"
                         alt="Kostub Kumar"
                         className="aspect-square w-full max-w-md rounded-xl object-cover"
                       />
