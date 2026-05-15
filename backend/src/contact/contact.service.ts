@@ -8,7 +8,9 @@ export class ContactService {
 
   async sendEmail(name: string, email: string, message: string) {
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
       auth: {
         user: this.config.get('EMAIL_USER'),
         pass: this.config.get('EMAIL_PASS'),
@@ -16,10 +18,10 @@ export class ContactService {
     });
 
     await transporter.sendMail({
-      from: email,
+      from: this.config.get('EMAIL_USER'),
       to: this.config.get('EMAIL_USER'),
       subject: `Portfolio contact from ${name}`,
-      text: message,
+      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
     });
 
     return { success: true };
